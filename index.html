@@ -232,87 +232,39 @@
   <div class="viewer-container">
     <model-viewer id="moteur-hemi" src="assets/hemi_engine.glb" alt="Moteur Hemi 3D" camera-controls touch-action="pan-y" scale="0.1 0.1 0.1" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" ar-placement="floor" shadow-intensity="1" exposure="0.8" camera-orbit="35deg 70deg 1.8m" min-camera-orbit="auto auto 0.8m" max-camera-orbit="auto auto 3m" field-of-view="30deg">
 
-      <!-- =========================================
-           HOTSPOT 1 : BLOC MOTEUR
-           Intention : repère spatial global
-           Position : centre du bloc principal (engine)
-           ========================================= -->
-      <button
-        class="hotspot"
-        slot="hotspot-1"
-        data-position="0.5m 1.5m 1m"
-        data-normal="0m 0m 1m"
-        tabindex="0"
-        aria-label="Bloc moteur"
-      >
+      <!-- HOTSPOT 1 : BLOC MOTEUR - carter central avec logo "500" -->
+      <button class="hotspot" slot="hotspot-1" data-position="1m 1m 2m" data-normal="0 0 1" tabindex="0" aria-label="Bloc moteur">
         1
         <div class="hotspot-annotation">
           <strong>Bloc moteur</strong>
-          Le bloc moteur constitue la structure centrale. Il abrite les cylindres
-          et supporte l'ensemble des composants.
+          Le bloc moteur constitue la structure centrale. Il abrite les cylindres et supporte l'ensemble des composants.
         </div>
       </button>
 
-      <!-- =========================================
-           HOTSPOT 2 : CULASSE HÉMISPHÉRIQUE
-           Intention : spécificité technique Hemi
-           Position : partie haute du bloc (engine.004)
-           ========================================= -->
-      <button
-        class="hotspot"
-        slot="hotspot-2"
-        data-position="0.9m 3.5m 0.5m"
-        data-normal="0m 1m 0m"
-        tabindex="0"
-        aria-label="Culasse hémisphérique"
-      >
+      <!-- HOTSPOT 2 : CULASSE - partie haute du V8, sous le blower -->
+      <button class="hotspot" slot="hotspot-2" data-position="-0.5m 4m 1.5m" data-normal="0 1 0" tabindex="0" aria-label="Culasse hemispherique">
         2
         <div class="hotspot-annotation">
-          <strong>Culasse hémisphérique</strong>
-          La culasse hémisphérique donne son nom au moteur Hemi.
-          Sa forme en dôme optimise la combustion et la puissance.
+          <strong>Culasse hemispherique</strong>
+          La culasse hemispherique donne son nom au moteur Hemi. Sa forme en dome optimise la combustion et la puissance.
         </div>
       </button>
 
-      <!-- =========================================
-           HOTSPOT 3 : SURALIMENTATION (BLOWER)
-           Intention : lien structure / performance
-           Position : compresseur volumétrique (engine.006)
-           ========================================= -->
-      <button
-        class="hotspot"
-        slot="hotspot-3"
-        data-position="4m 5.5m 0.5m"
-        data-normal="1m 1m 0m"
-        tabindex="0"
-        aria-label="Suralimentation (Blower)"
-      >
+      <!-- HOTSPOT 3 : BLOWER - compresseur volumetrique chrome en haut -->
+      <button class="hotspot" slot="hotspot-3" data-position="3m 6m 0m" data-normal="0 1 0" tabindex="0" aria-label="Suralimentation Blower">
         3
         <div class="hotspot-annotation">
           <strong>Suralimentation (Blower)</strong>
-          Le compresseur volumétrique force l'air dans les cylindres.
-          Plus d'air = plus de carburant brûlé = plus de puissance.
+          Le compresseur volumetrique force l'air dans les cylindres. Plus d'air = plus de carburant brule = plus de puissance.
         </div>
       </button>
 
-      <!-- =========================================
-           HOTSPOT 4 : ADMISSION / ÉCHAPPEMENT
-           Intention : chaîne logique des flux
-           Position : collecteurs latéraux (engine.007)
-           ========================================= -->
-      <button
-        class="hotspot"
-        slot="hotspot-4"
-        data-position="1.5m 3m 1.5m"
-        data-normal="0m 0m 1m"
-        tabindex="0"
-        aria-label="Admission et échappement"
-      >
+      <!-- HOTSPOT 4 : ECHAPPEMENT - collecteurs tubulaires en bas -->
+      <button class="hotspot" slot="hotspot-4" data-position="2.5m -1m 2m" data-normal="0 0 1" tabindex="0" aria-label="Admission et echappement">
         4
         <div class="hotspot-annotation">
-          <strong>Admission / Échappement</strong>
-          L'admission amène l'air frais, l'échappement évacue les gaz brûlés.
-          Ce circuit définit le cycle de fonctionnement.
+          <strong>Admission / Echappement</strong>
+          L'admission amene l'air frais, l'echappement evacue les gaz brules. Ce circuit definit le cycle de fonctionnement.
         </div>
       </button>
 
