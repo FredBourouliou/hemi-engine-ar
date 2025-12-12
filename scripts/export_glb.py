@@ -441,10 +441,7 @@ def main():
         else:
             log(f"Cible atteinte : {vertices_after:,} vertices", "OK")
 
-        # ÉTAPE 6 : Appliquer l'échelle à la géométrie
-        apply_scale_to_geometry(copies, CONFIG["export_scale"])
-
-        # ÉTAPE 7 : Cacher les originaux pour l'export
+        # ÉTAPE 6 : Cacher les originaux pour l'export
         hide_original_objects(exportable_objects)
 
         # ÉTAPE 7 : Exporter en GLB

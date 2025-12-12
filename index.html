@@ -3,16 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moteur Hemi - Exploration AR Pédagogique</title>
-
-  <!-- Model-Viewer : composant web Google pour affichage 3D et AR -->
+  <title>Moteur Hemi - Exploration AR</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
   <style>
-    /* =============================================
-       STYLES DE BASE
-       ============================================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -25,10 +18,6 @@
       color: #eee;
       min-height: 100vh;
     }
-
-    /* =============================================
-       EN-TÊTE PÉDAGOGIQUE
-       ============================================= */
 
     header {
       padding: 1rem;
@@ -48,13 +37,9 @@
       color: #aaa;
     }
 
-    /* =============================================
-       CONTENEUR MODEL-VIEWER
-       ============================================= */
-
     .viewer-container {
       width: 100%;
-      height: calc(100vh - 180px);
+      height: calc(100vh - 140px);
       min-height: 400px;
     }
 
@@ -62,118 +47,7 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      --poster-color: transparent;
     }
-
-    /* =============================================
-       HOTSPOTS : MARQUEURS INTERACTIFS
-       ============================================= */
-
-    .hotspot {
-      --min-hotspot-opacity: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #e94560;
-      border: 3px solid #fff;
-      cursor: pointer;
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      line-height: 22px;
-      text-align: center;
-    }
-
-    .hotspot:hover {
-      background: #ff6b6b;
-    }
-
-    /* Annotation textuelle associée au hotspot */
-    .hotspot .hotspot-annotation {
-      position: absolute;
-      left: 36px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(22, 33, 62, 0.95);
-      color: #fff;
-      padding: 0.6rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      line-height: 1.4;
-      min-width: 180px;
-      max-width: 220px;
-      white-space: normal;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      border-left: 3px solid #e94560;
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
-      text-align: left;
-    }
-
-    .hotspot:hover .hotspot-annotation,
-    .hotspot:focus .hotspot-annotation {
-      visibility: visible;
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .hotspot-annotation strong {
-      color: #e94560;
-    }
-
-    /* =============================================
-       LÉGENDE / GUIDE DE PARCOURS
-       ============================================= */
-
-    .parcours-guide {
-      padding: 1rem;
-      background: #16213e;
-      border-top: 2px solid #0f3460;
-    }
-
-    .parcours-guide h2 {
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-      color: #aaa;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .parcours-etapes {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .etape {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.4rem 0.7rem;
-      background: #1a1a2e;
-      border-radius: 4px;
-      font-size: 0.8rem;
-    }
-
-    .etape-numero {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #e94560;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-
-    /* =============================================
-       BOUTON AR
-       ============================================= */
 
     .ar-button {
       position: absolute;
@@ -194,158 +68,55 @@
       background: #ff6b6b;
     }
 
-    /* Masquer si AR non supportée */
     .ar-button[hidden] {
       display: none;
     }
 
-    /* =============================================
-       CONSIGNE AR
-       ============================================= */
-
-    .ar-hint {
-      margin-top: 0.8rem;
-      padding-top: 0.8rem;
-      border-top: 1px solid #0f3460;
+    footer {
+      padding: 0.8rem 1rem;
+      background: #16213e;
+      border-top: 2px solid #0f3460;
       font-size: 0.75rem;
       color: #888;
+      text-align: center;
     }
 
-    .ar-hint strong {
+    footer strong {
       color: #e94560;
     }
   </style>
 </head>
 <body>
 
-  <!-- =============================================
-       EN-TÊTE : CONTEXTE PÉDAGOGIQUE
-       ============================================= -->
   <header>
     <h1>Moteur Hemi - Exploration AR</h1>
-    <p>Module pédagogique : architecture et composants clés</p>
+    <p>Module pedagogique : visualisation 3D et realite augmentee</p>
   </header>
 
-  <!-- =============================================
-       VISIONNEUSE 3D / AR
-       ============================================= -->
   <div class="viewer-container">
-    <model-viewer id="moteur-hemi" src="assets/hemi_engine.glb?v=2" alt="Moteur Hemi 3D" camera-controls touch-action="pan-y" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" ar-placement="floor" shadow-intensity="1" exposure="0.8" camera-orbit="35deg 75deg auto" field-of-view="30deg">
-
-      <button class="hotspot" slot="hotspot-1" data-position="0.026m 0.095m 0.024m" data-normal="0 0 1">
-        1
-        <div class="hotspot-annotation"><strong>Bloc moteur</strong><br>Structure centrale abritant les cylindres</div>
-      </button>
-
-      <button class="hotspot" slot="hotspot-2" data-position="0.046m 0.15m 0.006m" data-normal="0 1 0">
-        2
-        <div class="hotspot-annotation"><strong>Culasse Hemi</strong><br>Forme hemispherique optimisant la combustion</div>
-      </button>
-
-      <button class="hotspot" slot="hotspot-3" data-position="0.209m 0.04m 0.065m" data-normal="1 0 0">
-        3
-        <div class="hotspot-annotation"><strong>Blower</strong><br>Compresseur volumetrique pour plus de puissance</div>
-      </button>
-
-      <button class="hotspot" slot="hotspot-4" data-position="0.023m 0.001m 0.011m" data-normal="0 0 1">
-        4
-        <div class="hotspot-annotation"><strong>Echappement</strong><br>Evacuation des gaz brules</div>
-      </button>
-
-      <!-- Bouton AR natif -->
-      <button slot="ar-button" class="ar-button">
-        Voir en AR
-      </button>
-
+    <model-viewer
+      id="moteur-hemi"
+      src="assets/hemi_engine.glb"
+      alt="Moteur Hemi V8"
+      camera-controls
+      touch-action="pan-y"
+      camera-orbit="45deg 65deg 2.5m"
+      field-of-view="30deg"
+      shadow-intensity="1"
+      exposure="0.8"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      ar-scale="fixed"
+      ar-placement="floor"
+    >
+      <button slot="ar-button" class="ar-button">Voir en AR</button>
     </model-viewer>
   </div>
 
-  <!-- =============================================
-       GUIDE DE PARCOURS
-       ============================================= -->
-  <nav class="parcours-guide">
-    <h2>Parcours suggéré</h2>
-    <div class="parcours-etapes">
-      <div class="etape">
-        <span class="etape-numero">1</span>
-        <span>Bloc moteur</span>
-      </div>
-      <div class="etape">
-        <span class="etape-numero">2</span>
-        <span>Culasse Hemi</span>
-      </div>
-      <div class="etape">
-        <span class="etape-numero">3</span>
-        <span>Blower</span>
-      </div>
-      <div class="etape">
-        <span class="etape-numero">4</span>
-        <span>Admission</span>
-      </div>
-    </div>
-    <!-- Consigne AR -->
-    <p class="ar-hint">
-      <strong>En AR :</strong> pincez pour redimensionner, glissez pour déplacer.
-    </p>
-  </nav>
-
-  <!-- Outil de positionnement des hotspots -->
-  <div id="coord-display" style="position:fixed;bottom:10px;left:10px;background:rgba(0,0,0,0.8);color:#0f0;padding:10px;font-family:monospace;font-size:12px;z-index:9999;border-radius:4px;">
-    Cliquez sur le modele pour obtenir les coordonnees
-  </div>
-  <script>
-    const modelViewer = document.getElementById('moteur-hemi');
-    const coordDisplay = document.getElementById('coord-display');
-
-    // Attendre le chargement du modele
-    modelViewer.addEventListener('load', () => {
-      console.log('Model loaded!');
-
-      // Afficher les dimensions du modele
-      const dim = modelViewer.getDimensions();
-      console.log('Model dimensions:', dim);
-
-      // Afficher les dimensions dans l'encart
-      coordDisplay.innerHTML = `<strong>Modele charge!</strong><br>Dimensions: ${dim.x.toFixed(3)}m x ${dim.y.toFixed(3)}m x ${dim.z.toFixed(3)}m<br><br>Cliquez sur le moteur pour obtenir des coordonnees`;
-
-      // Mettre a jour les hotspots via l'API (coordonnees avec echelle 0.05 integree)
-      modelViewer.updateHotspot({
-        name: 'hotspot-1',
-        position: '0.026m 0.095m 0.024m',
-        normal: '0 0 1'
-      });
-      modelViewer.updateHotspot({
-        name: 'hotspot-2',
-        position: '0.046m 0.15m 0.006m',
-        normal: '0 1 0'
-      });
-      modelViewer.updateHotspot({
-        name: 'hotspot-3',
-        position: '0.209m 0.04m 0.065m',
-        normal: '1 0 0'
-      });
-      modelViewer.updateHotspot({
-        name: 'hotspot-4',
-        position: '0.023m 0.001m 0.011m',
-        normal: '0 0 1'
-      });
-
-      console.log('Hotspots updated - scale 0.05 baked into GLB');
-    });
-
-    modelViewer.addEventListener('click', (event) => {
-      const rect = modelViewer.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const hit = modelViewer.positionAndNormalFromPoint(x, y);
-      if (hit) {
-        const pos = `${hit.position.x.toFixed(2)}m ${hit.position.y.toFixed(2)}m ${hit.position.z.toFixed(2)}m`;
-        const norm = `${hit.normal.x.toFixed(2)} ${hit.normal.y.toFixed(2)} ${hit.normal.z.toFixed(2)}`;
-        coordDisplay.innerHTML = `<strong>Position:</strong> ${pos}<br><strong>Normal:</strong> ${norm}`;
-        console.log('data-position="' + pos + '" data-normal="' + norm + '"');
-      }
-    });
-  </script>
+  <footer>
+    <strong>3D :</strong> faites glisser pour pivoter, pincez pour zoomer.
+    <strong>AR :</strong> appuyez sur le bouton, pointez une surface plane.
+  </footer>
 
 </body>
 </html>
