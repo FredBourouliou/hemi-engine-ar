@@ -72,28 +72,6 @@
       display: none;
     }
 
-    /* Hotspot */
-    .hotspot {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #e94560;
-      border: 3px solid #fff;
-      cursor: pointer;
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hotspot:hover {
-      background: #ff6b6b;
-      transform: scale(1.1);
-    }
-
     footer {
       padding: 0.8rem 1rem;
       background: #16213e;
@@ -153,14 +131,6 @@
       field-of-view="45deg"
       bounds="tight"
     >
-      <!-- Hotspot : Bloc moteur -->
-      <button
-        class="hotspot"
-        slot="hotspot-1"
-        data-position="3.321m 1.804m 0.685m"
-        data-normal="1 0 0"
-      >1</button>
-
       <button slot="ar-button" class="ar-button">Voir en AR</button>
     </model-viewer>
   </div>
