@@ -1,0 +1,34 @@
+# Blender
+*.blend1
+*.blend2
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Thumbnails
+Thumbs.db
+ehthumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (si utilise plus tard)
+node_modules/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.log
+
+# Rapports d'analyse (regenerables)
+analyse_blend_report.json
+analyse_blend_report.txt
+
+# Configuration locale
+.claude/
