@@ -198,6 +198,22 @@
     .ar-button[hidden] {
       display: none;
     }
+
+    /* =============================================
+       CONSIGNE AR
+       ============================================= */
+
+    .ar-hint {
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #0f3460;
+      font-size: 0.75rem;
+      color: #888;
+    }
+
+    .ar-hint strong {
+      color: #e94560;
+    }
   </style>
 </head>
 <body>
@@ -218,15 +234,39 @@
       id="moteur-hemi"
       src="assets/hemi_engine.glb"
       alt="Modèle 3D du moteur Hemi"
+
+      <!-- === CONTRÔLES UTILISATEUR === -->
       camera-controls
       touch-action="pan-y"
+
+      <!-- === ÉCHELLE DU MODÈLE ===
+           Le modèle GLB fait ~8 unités (= 8m en AR).
+           scale="0.1" ramène le modèle à ~80cm, taille manipulable.
+           Affecte les deux modes (objet et AR). -->
+      scale="0.1 0.1 0.1"
+
+      <!-- === MODE AR ===
+           ar              : active le mode AR
+           ar-modes        : priorité WebXR > Scene Viewer > Quick Look
+           ar-scale="auto" : permet à l'utilisateur de redimensionner (pinch)
+           ar-placement    : placement au sol (floor) -->
       ar
       ar-modes="webxr scene-viewer quick-look"
+      ar-scale="auto"
+      ar-placement="floor"
+
+      <!-- === RENDU === -->
       shadow-intensity="1"
       exposure="0.8"
-      camera-orbit="35deg 70deg 18m"
-      min-camera-orbit="auto auto 12m"
-      max-camera-orbit="auto auto 30m"
+
+      <!-- === CAMÉRA (ajustée pour scale 0.1) ===
+           Distances réduites proportionnellement :
+           - orbit : 1.8m (vue initiale)
+           - min   : 0.8m (zoom max sans entrer dans le modèle)
+           - max   : 3m (recul max) -->
+      camera-orbit="35deg 70deg 1.8m"
+      min-camera-orbit="auto auto 0.8m"
+      max-camera-orbit="auto auto 3m"
       field-of-view="30deg"
     >
 
@@ -345,6 +385,10 @@
         <span>Admission</span>
       </div>
     </div>
+    <!-- Consigne AR -->
+    <p class="ar-hint">
+      <strong>En AR :</strong> pincez pour redimensionner, glissez pour déplacer.
+    </p>
   </nav>
 
 </body>
