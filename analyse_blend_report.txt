@@ -1,0 +1,254 @@
+============================================================
+RAPPORT D'ANALYSE DU FICHIER BLEND
+============================================================
+
+Fichier : /Users/fredericbourouliou/Essai AR/hemi_engine.blend
+Date : 2025-12-12T13:19:56.877592
+Blender : 4.3.2
+
+----------------------------------------
+STATISTIQUES
+----------------------------------------
+  nombre_objets: 18
+  nombre_meshes: 13
+  nombre_materiaux: 42
+  nombre_textures: 0
+  nombre_images: 2
+  nombre_collections: 1
+  nombre_animations: 0
+
+----------------------------------------
+OBJETS MESH (avec polygones)
+----------------------------------------
+
+  [engine]
+    Vertices: 91489
+    Faces: 90023
+    Dimensions: [7.757, 8.044, 8.39]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.023', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.001]
+    Vertices: 3894
+    Faces: 3572
+    Dimensions: [3.216, 2.796, 3.879]
+    Matériaux: ['blower_in', 'Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.002]
+    Vertices: 192
+    Faces: 69
+    Dimensions: [2.581, 2.581, 0.085]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.003]
+    Vertices: 7680
+    Faces: 7680
+    Dimensions: [7.511, 7.511, 5.418]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.004]
+    Vertices: 3389
+    Faces: 3381
+    Dimensions: [5.241, 5.202, 6.987]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.005]
+    Vertices: 289
+    Faces: 288
+    Dimensions: [2.32, 2.32, 1.931]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.012', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.006]
+    Vertices: 63600
+    Faces: 62784
+    Dimensions: [4.376, 4.914, 5.72]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.007]
+    Vertices: 27840
+    Faces: 27648
+    Dimensions: [3.761, 2.802, 4.15]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.008]
+    Vertices: 4564
+    Faces: 6402
+    Dimensions: [3.961, 3.963, 3.022]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.009]
+    Vertices: 0
+    Faces: 0
+    Dimensions: [0.0, 0.0, 0.0]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.010]
+    Vertices: 358
+    Faces: 344
+    Dimensions: [2.623, 2.623, 4.329]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [engine.011]
+    Vertices: 262
+    Faces: 260
+    Dimensions: [1.632, 1.632, 3.905]
+    Matériaux: ['Material', 'Material.041', 'Material.001', 'Material.038', 'Material.017', 'blower_in', 'Material.040', 'Material.021', 'Material.026', 'Material.035', 'Material.022', 'Material.036', 'Material.025', 'Material.016', 'Material.003', 'Material.009', 'Material.002', 'Material.019', 'Material.024', 'Material.008', 'Material.029', 'Material.023', 'Material.028', 'capnwires', 'Material.007', 'Material.006', 'Material.005', 'Material.013', 'Material.018', 'Material.037', 'Material.033', 'Material.034', 'Material.039', 'Material.004', 'Material.030', 'Material.015', 'Material.020', 'Material.014', 'Material.010', 'Material.011']
+    UV Maps: ['UVMap']
+
+  [Plane]
+    Vertices: 4
+    Faces: 1
+    Dimensions: [38.282, 38.282, 0.0]
+    Matériaux: ['Material.027']
+    UV Maps: ['UVMap']
+
+----------------------------------------
+MATÉRIAUX
+----------------------------------------
+
+  [blower_in]
+    Nodes: True
+
+  [capnwires]
+    Nodes: True
+
+  [Material]
+    Nodes: True
+
+  [Material.001]
+    Nodes: True
+
+  [Material.002]
+    Nodes: True
+
+  [Material.003]
+    Nodes: True
+
+  [Material.004]
+    Nodes: True
+
+  [Material.005]
+    Nodes: True
+
+  [Material.006]
+    Nodes: True
+
+  [Material.007]
+    Nodes: True
+
+  [Material.008]
+    Nodes: True
+
+  [Material.009]
+    Nodes: True
+
+  [Material.010]
+    Nodes: True
+
+  [Material.011]
+    Nodes: True
+
+  [Material.012]
+    Nodes: True
+
+  [Material.013]
+    Nodes: True
+
+  [Material.014]
+    Nodes: True
+
+  [Material.015]
+    Nodes: True
+
+  [Material.016]
+    Nodes: True
+
+  [Material.017]
+    Nodes: True
+
+  [Material.018]
+    Nodes: True
+
+  [Material.019]
+    Nodes: True
+
+  [Material.020]
+    Nodes: True
+
+  [Material.021]
+    Nodes: True
+
+  [Material.022]
+    Nodes: True
+
+  [Material.023]
+    Nodes: True
+
+  [Material.024]
+    Nodes: False
+
+  [Material.025]
+    Nodes: True
+
+  [Material.026]
+    Nodes: True
+
+  [Material.027]
+    Nodes: True
+
+  [Material.028]
+    Nodes: True
+
+  [Material.029]
+    Nodes: True
+
+  [Material.030]
+    Nodes: True
+
+  [Material.033]
+    Nodes: True
+
+  [Material.034]
+    Nodes: True
+
+  [Material.035]
+    Nodes: True
+
+  [Material.036]
+    Nodes: True
+
+  [Material.037]
+    Nodes: True
+
+  [Material.038]
+    Nodes: True
+
+  [Material.039]
+    Nodes: True
+
+  [Material.040]
+    Nodes: True
+
+  [Material.041]
+    Nodes: True
+
+----------------------------------------
+DIMENSIONS GLOBALES
+----------------------------------------
+  Taille X: 38.282 ADAPTIVE
+  Taille Y: 38.282 ADAPTIVE
+  Taille Z: 12.924 ADAPTIVE
+
+============================================================
+Rapport JSON complet : analyse_blend_report.json
+============================================================

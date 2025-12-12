@@ -1,0 +1,1176 @@
+{
+  "meta": {
+    "fichier": "/Users/fredericbourouliou/Essai AR/hemi_engine.blend",
+    "date_analyse": "2025-12-12T13:19:56.877592",
+    "version_blender": "4.3.2"
+  },
+  "statistiques": {
+    "nombre_objets": 18,
+    "nombre_meshes": 13,
+    "nombre_materiaux": 42,
+    "nombre_textures": 0,
+    "nombre_images": 2,
+    "nombre_collections": 1,
+    "nombre_animations": 0
+  },
+  "objets": [
+    {
+      "nom": "BezierCurve",
+      "type": "CURVE",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.5139427185058594,
+        1.5458852052688599,
+        3.2868151664733887
+      ],
+      "dimensions": [
+        4.080234050750732,
+        1.217567801475525,
+        1.1136398315429688
+      ],
+      "materiaux_assignes": [
+        "capnwires"
+      ]
+    },
+    {
+      "nom": "Camera",
+      "type": "CAMERA",
+      "visible": true,
+      "parent": null,
+      "location": [
+        -16.380783081054688,
+        -19.60091209411621,
+        5.120931625366211
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materiaux_assignes": []
+    },
+    {
+      "nom": "engine",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.5161746144294739,
+        -0.46933817863464355,
+        1.9028782844543457
+      ],
+      "dimensions": [
+        7.75716495513916,
+        8.043540954589844,
+        8.389608383178711
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.023",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 91489,
+        "faces": 90023,
+        "edges": 181199,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.001",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.4629039168357849,
+        -0.2205525040626526,
+        0.018957138061523438
+      ],
+      "dimensions": [
+        3.2157280445098877,
+        2.7964043617248535,
+        3.8790194988250732
+      ],
+      "materiaux_assignes": [
+        "blower_in",
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 3894,
+        "faces": 3572,
+        "edges": 7466,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.002",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.4629039168357849,
+        -0.2205525040626526,
+        0.018957138061523438
+      ],
+      "dimensions": [
+        2.581397294998169,
+        2.581397771835327,
+        0.08530837297439575
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 192,
+        "faces": 69,
+        "edges": 256,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.003",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        4.172553539276123,
+        -1.2981443405151367,
+        0.7998489737510681
+      ],
+      "dimensions": [
+        7.511362552642822,
+        7.511362552642822,
+        5.4175615310668945
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 7680,
+        "faces": 7680,
+        "edges": 15360,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.004",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.9099789261817932,
+        -0.11502905935049057,
+        3.003357410430908
+      ],
+      "dimensions": [
+        5.240918159484863,
+        5.202231407165527,
+        6.98738956451416
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 3389,
+        "faces": 3381,
+        "edges": 6756,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.005",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        6.000216960906982,
+        -0.22921399772167206,
+        4.318231582641602
+      ],
+      "dimensions": [
+        2.319763660430908,
+        2.3197638988494873,
+        1.9307737350463867
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.012",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 289,
+        "faces": 288,
+        "edges": 576,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.006",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        4.176198959350586,
+        -0.2292599380016327,
+        5.040974140167236
+      ],
+      "dimensions": [
+        4.375792026519775,
+        4.9136738777160645,
+        5.720226287841797
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 63600,
+        "faces": 62784,
+        "edges": 126384,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.007",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        1.2621042728424072,
+        -0.8781869411468506,
+        3.177283763885498
+      ],
+      "dimensions": [
+        3.7612011432647705,
+        2.801548480987549,
+        4.150296688079834
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 27840,
+        "faces": 27648,
+        "edges": 55488,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.008",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        3.1358306407928467,
+        -0.22950904071331024,
+        2.425266981124878
+      ],
+      "dimensions": [
+        3.9613518714904785,
+        3.962813377380371,
+        3.022083282470703
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 4564,
+        "faces": 6402,
+        "edges": 10934,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.009",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.4629039168357849,
+        -0.2205525040626526,
+        0.018957138061523438
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 0,
+        "faces": 0,
+        "edges": 0,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.010",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        3.2945737838745117,
+        -0.21082180738449097,
+        -1.5472493171691895
+      ],
+      "dimensions": [
+        2.62336802482605,
+        2.623368263244629,
+        4.328939914703369
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 358,
+        "faces": 344,
+        "edges": 701,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "engine.011",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.4629039168357849,
+        -0.2205525040626526,
+        0.018957138061523438
+      ],
+      "dimensions": [
+        1.6317371129989624,
+        1.6317371129989624,
+        3.905463218688965
+      ],
+      "materiaux_assignes": [
+        "Material",
+        "Material.041",
+        "Material.001",
+        "Material.038",
+        "Material.017",
+        "blower_in",
+        "Material.040",
+        "Material.021",
+        "Material.026",
+        "Material.035",
+        "Material.022",
+        "Material.036",
+        "Material.025",
+        "Material.016",
+        "Material.003",
+        "Material.009",
+        "Material.002",
+        "Material.019",
+        "Material.024",
+        "Material.008",
+        "Material.029",
+        "Material.023",
+        "Material.028",
+        "capnwires",
+        "Material.007",
+        "Material.006",
+        "Material.005",
+        "Material.013",
+        "Material.018",
+        "Material.037",
+        "Material.033",
+        "Material.034",
+        "Material.039",
+        "Material.004",
+        "Material.030",
+        "Material.015",
+        "Material.020",
+        "Material.014",
+        "Material.010",
+        "Material.011"
+      ],
+      "mesh": {
+        "vertices": 262,
+        "faces": 260,
+        "edges": 520,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    },
+    {
+      "nom": "Lamp",
+      "type": "LIGHT",
+      "visible": true,
+      "parent": null,
+      "location": [
+        5.32997465133667,
+        -7.929914474487305,
+        22.411808013916016
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materiaux_assignes": []
+    },
+    {
+      "nom": "Lamp.001",
+      "type": "LIGHT",
+      "visible": true,
+      "parent": "Lamp",
+      "location": [
+        10.868404388427734,
+        7.807117938995361,
+        22.140762329101562
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materiaux_assignes": []
+    },
+    {
+      "nom": "Lamp.002",
+      "type": "LIGHT",
+      "visible": true,
+      "parent": "Lamp",
+      "location": [
+        -27.425710678100586,
+        -9.135412216186523,
+        11.631468772888184
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "materiaux_assignes": []
+    },
+    {
+      "nom": "Plane",
+      "type": "MESH",
+      "visible": true,
+      "parent": null,
+      "location": [
+        0.0,
+        0.0,
+        -2.4327139854431152
+      ],
+      "dimensions": [
+        38.28215026855469,
+        38.28215026855469,
+        0.0
+      ],
+      "materiaux_assignes": [
+        "Material.027"
+      ],
+      "mesh": {
+        "vertices": 4,
+        "faces": 1,
+        "edges": 4,
+        "uv_layers": [
+          "UVMap"
+        ]
+      }
+    }
+  ],
+  "materiaux": [
+    {
+      "nom": "blower_in",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "capnwires",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.001",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.002",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.003",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.004",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.005",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.006",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.007",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.008",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.009",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.010",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.011",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.012",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.013",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.014",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.015",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.016",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.017",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.018",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.019",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.020",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.021",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.022",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.023",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.024",
+      "use_nodes": false,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.025",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.026",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.027",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.028",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.029",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.030",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.033",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.034",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.035",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.036",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.037",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.038",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.039",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.040",
+      "use_nodes": true,
+      "textures_utilisees": []
+    },
+    {
+      "nom": "Material.041",
+      "use_nodes": true,
+      "textures_utilisees": []
+    }
+  ],
+  "textures": [],
+  "collections": [
+    {
+      "nom": "Collection 1",
+      "objets": [
+        "engine",
+        "Lamp",
+        "Lamp.002",
+        "Lamp.001",
+        "Camera",
+        "engine.001",
+        "engine.002",
+        "engine.003",
+        "engine.004",
+        "engine.005",
+        "engine.006",
+        "engine.007",
+        "engine.008",
+        "engine.009",
+        "engine.010",
+        "engine.011"
+      ]
+    }
+  ],
+  "animations": [],
+  "dimensions_scene": {
+    "min": [
+      -19.141075134277344,
+      -19.141075134277344,
+      -3.944661855697632
+    ],
+    "max": [
+      19.141075134277344,
+      19.141075134277344,
+      8.979694366455078
+    ],
+    "taille": [
+      38.28215026855469,
+      38.28215026855469,
+      12.92435622215271
+    ],
+    "unite": "ADAPTIVE"
+  }
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moteur Hemi - Exploration AR Pédagogique</title>
+
+  <!-- Model-Viewer : composant web Google pour affichage 3D et AR -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    /* =============================================
+       STYLES DE BASE
+       ============================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+    }
+
+    /* =============================================
+       EN-TÊTE PÉDAGOGIQUE
+       ============================================= */
+
+    header {
+      padding: 1rem;
+      text-align: center;
+      background: #16213e;
+      border-bottom: 2px solid #0f3460;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* =============================================
+       CONTENEUR MODEL-VIEWER
+       ============================================= */
+
+    .viewer-container {
+      width: 100%;
+      height: calc(100vh - 180px);
+      min-height: 400px;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      --poster-color: transparent;
+    }
+
+    /* =============================================
+       HOTSPOTS : MARQUEURS INTERACTIFS
+       ============================================= */
+
+    .hotspot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e94560;
+      border: 3px solid #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .hotspot:hover {
+      transform: scale(1.15);
+      background: #ff6b6b;
+    }
+
+    /* Annotation textuelle associée au hotspot */
+    .hotspot-annotation {
+      position: absolute;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(22, 33, 62, 0.95);
+      color: #fff;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      max-width: 260px;
+      white-space: normal;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border-left: 3px solid #e94560;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .hotspot:hover .hotspot-annotation,
+    .hotspot:focus .hotspot-annotation {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hotspot-annotation strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #e94560;
+    }
+
+    /* =============================================
+       LÉGENDE / GUIDE DE PARCOURS
+       ============================================= */
+
+    .parcours-guide {
+      padding: 1rem;
+      background: #16213e;
+      border-top: 2px solid #0f3460;
+    }
+
+    .parcours-guide h2 {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .parcours-etapes {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .etape {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.7rem;
+      background: #1a1a2e;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+
+    .etape-numero {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #e94560;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+
+    /* =============================================
+       BOUTON AR
+       ============================================= */
+
+    .ar-button {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      padding: 0.7rem 1.2rem;
+      background: #e94560;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+    }
+
+    .ar-button:hover {
+      background: #ff6b6b;
+    }
+
+    /* Masquer si AR non supportée */
+    .ar-button[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============================================
+       EN-TÊTE : CONTEXTE PÉDAGOGIQUE
+       ============================================= -->
+  <header>
+    <h1>Moteur Hemi - Exploration AR</h1>
+    <p>Module pédagogique : architecture et composants clés</p>
+  </header>
+
+  <!-- =============================================
+       VISIONNEUSE 3D / AR
+       ============================================= -->
+  <div class="viewer-container">
+    <model-viewer
+      id="moteur-hemi"
+      src="assets/hemi_engine.glb"
+      alt="Modèle 3D du moteur Hemi"
+      camera-controls
+      touch-action="pan-y"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1"
+      exposure="0.8"
+      camera-orbit="35deg 70deg 18m"
+      min-camera-orbit="auto auto 12m"
+      max-camera-orbit="auto auto 30m"
+      field-of-view="30deg"
+    >
+
+      <!-- =========================================
+           HOTSPOT 1 : BLOC MOTEUR
+           Intention : repère spatial global
+           Position : centre du bloc principal (engine)
+           ========================================= -->
+      <button
+        class="hotspot"
+        slot="hotspot-1"
+        data-position="0.5m 1.5m 1m"
+        data-normal="0m 0m 1m"
+        tabindex="0"
+        aria-label="Bloc moteur"
+      >
+        1
+        <div class="hotspot-annotation">
+          <strong>Bloc moteur</strong>
+          Le bloc moteur constitue la structure centrale. Il abrite les cylindres
+          et supporte l'ensemble des composants.
+        </div>
+      </button>
+
+      <!-- =========================================
+           HOTSPOT 2 : CULASSE HÉMISPHÉRIQUE
+           Intention : spécificité technique Hemi
+           Position : partie haute du bloc (engine.004)
+           ========================================= -->
+      <button
+        class="hotspot"
+        slot="hotspot-2"
+        data-position="0.9m 3.5m 0.5m"
+        data-normal="0m 1m 0m"
+        tabindex="0"
+        aria-label="Culasse hémisphérique"
+      >
+        2
+        <div class="hotspot-annotation">
+          <strong>Culasse hémisphérique</strong>
+          La culasse hémisphérique donne son nom au moteur Hemi.
+          Sa forme en dôme optimise la combustion et la puissance.
+        </div>
+      </button>
+
+      <!-- =========================================
+           HOTSPOT 3 : SURALIMENTATION (BLOWER)
+           Intention : lien structure / performance
+           Position : compresseur volumétrique (engine.006)
+           ========================================= -->
+      <button
+        class="hotspot"
+        slot="hotspot-3"
+        data-position="4m 5.5m 0.5m"
+        data-normal="1m 1m 0m"
+        tabindex="0"
+        aria-label="Suralimentation (Blower)"
+      >
+        3
+        <div class="hotspot-annotation">
+          <strong>Suralimentation (Blower)</strong>
+          Le compresseur volumétrique force l'air dans les cylindres.
+          Plus d'air = plus de carburant brûlé = plus de puissance.
+        </div>
+      </button>
+
+      <!-- =========================================
+           HOTSPOT 4 : ADMISSION / ÉCHAPPEMENT
+           Intention : chaîne logique des flux
+           Position : collecteurs latéraux (engine.007)
+           ========================================= -->
+      <button
+        class="hotspot"
+        slot="hotspot-4"
+        data-position="1.5m 3m 1.5m"
+        data-normal="0m 0m 1m"
+        tabindex="0"
+        aria-label="Admission et échappement"
+      >
+        4
+        <div class="hotspot-annotation">
+          <strong>Admission / Échappement</strong>
+          L'admission amène l'air frais, l'échappement évacue les gaz brûlés.
+          Ce circuit définit le cycle de fonctionnement.
+        </div>
+      </button>
+
+      <!-- Bouton AR natif -->
+      <button slot="ar-button" class="ar-button">
+        Voir en AR
+      </button>
+
+    </model-viewer>
+  </div>
+
+  <!-- =============================================
+       GUIDE DE PARCOURS
+       ============================================= -->
+  <nav class="parcours-guide">
+    <h2>Parcours suggéré</h2>
+    <div class="parcours-etapes">
+      <div class="etape">
+        <span class="etape-numero">1</span>
+        <span>Bloc moteur</span>
+      </div>
+      <div class="etape">
+        <span class="etape-numero">2</span>
+        <span>Culasse Hemi</span>
+      </div>
+      <div class="etape">
+        <span class="etape-numero">3</span>
+        <span>Blower</span>
+      </div>
+      <div class="etape">
+        <span class="etape-numero">4</span>
+        <span>Admission</span>
+      </div>
+    </div>
+  </nav>
+
+</body>
+</html>

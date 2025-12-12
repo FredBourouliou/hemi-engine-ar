@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "projet": "AR Pédagogique - Moteur Hemi",
+    "version": "1.0",
+    "modele": "hemi_engine.glb",
+    "nombre_hotspots": 4
+  },
+  "parcours": {
+    "type": "exploratoire_guide",
+    "ordre": "suggere_non_impose",
+    "description": "Découverte progressive de l'architecture du moteur Hemi"
+  },
+  "hotspots": [
+    {
+      "id": "hotspot-bloc-moteur",
+      "ordre": 1,
+      "nom": "Bloc moteur",
+      "texte_court": "Le bloc moteur constitue la structure centrale. Il abrite les cylindres et supporte l'ensemble des composants.",
+      "intention_pedagogique": "Établir un repère spatial global avant d'explorer les détails",
+      "position": {
+        "x": "0.5m",
+        "y": "1.5m",
+        "z": "1m"
+      },
+      "normal": {
+        "x": "0m",
+        "y": "0m",
+        "z": "1m"
+      },
+      "objet_blender": "engine",
+      "moment_sequence": "debut"
+    },
+    {
+      "id": "hotspot-culasse",
+      "ordre": 2,
+      "nom": "Culasse hémisphérique",
+      "texte_court": "La culasse hémisphérique donne son nom au moteur Hemi. Sa forme en dôme optimise la combustion et la puissance.",
+      "intention_pedagogique": "Comprendre la spécificité technique qui distingue ce type de moteur",
+      "position": {
+        "x": "0.9m",
+        "y": "3.5m",
+        "z": "0.5m"
+      },
+      "normal": {
+        "x": "0m",
+        "y": "1m",
+        "z": "0m"
+      },
+      "objet_blender": "engine.004",
+      "moment_sequence": "apres_vue_globale"
+    },
+    {
+      "id": "hotspot-blower",
+      "ordre": 3,
+      "nom": "Suralimentation (Blower)",
+      "texte_court": "Le compresseur volumétrique force l'air dans les cylindres. Plus d'air signifie plus de carburant brûlé, donc plus de puissance.",
+      "intention_pedagogique": "Établir le lien entre structure mécanique et gain de performance",
+      "position": {
+        "x": "4m",
+        "y": "5.5m",
+        "z": "0.5m"
+      },
+      "normal": {
+        "x": "1m",
+        "y": "1m",
+        "z": "0m"
+      },
+      "objet_blender": "engine.006",
+      "moment_sequence": "milieu"
+    },
+    {
+      "id": "hotspot-admission",
+      "ordre": 4,
+      "nom": "Admission / Échappement",
+      "texte_court": "L'admission amène l'air frais, l'échappement évacue les gaz brûlés. Ce circuit définit le cycle de fonctionnement.",
+      "intention_pedagogique": "Visualiser la chaîne logique des flux (entrée → combustion → sortie)",
+      "position": {
+        "x": "1.5m",
+        "y": "3m",
+        "z": "1.5m"
+      },
+      "normal": {
+        "x": "0m",
+        "y": "0m",
+        "z": "1m"
+      },
+      "objet_blender": "engine.007",
+      "moment_sequence": "fin"
+    }
+  ]
+}
