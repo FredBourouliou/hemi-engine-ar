@@ -262,31 +262,40 @@ def apply_decimation(copies, ratios):
 
 def apply_scale_to_geometry(copies, scale_factor):
     """
-    Applique l'échelle directement à la géométrie des copies.
-    Cela intègre l'échelle dans les vertices, pas dans le transform.
+    Applique l'échelle à tous les objets depuis l'origine mondiale.
+    Utilise le curseur 3D comme pivot pour garder les pièces ensemble.
     """
     log(f"Application de l'échelle {scale_factor} à la géométrie...", "STEP")
 
-    for original_name, obj_copy in copies.items():
-        # Appliquer l'échelle au transform de l'objet
-        obj_copy.scale = (scale_factor, scale_factor, scale_factor)
+    if not copies:
+        return
 
-        # Aussi mettre à jour la position (translation)
-        obj_copy.location = (
-            obj_copy.location.x * scale_factor,
-            obj_copy.location.y * scale_factor,
-            obj_copy.location.z * scale_factor
-        )
-
-    # Appliquer les transformations (bake into geometry)
+    # Sélectionner toutes les copies
     bpy.ops.object.select_all(action='DESELECT')
     for obj_copy in copies.values():
         obj_copy.select_set(True)
 
     bpy.context.view_layer.objects.active = list(copies.values())[0]
+
+    # Sauvegarder les paramètres actuels
+    original_pivot = bpy.context.scene.tool_settings.transform_pivot_point
+    original_cursor = bpy.context.scene.cursor.location.copy()
+
+    # Placer le curseur à l'origine et l'utiliser comme pivot
+    bpy.context.scene.cursor.location = (0, 0, 0)
+    bpy.context.scene.tool_settings.transform_pivot_point = 'CURSOR'
+
+    # Appliquer l'échelle à tous les objets depuis l'origine
+    bpy.ops.transform.resize(value=(scale_factor, scale_factor, scale_factor))
+
+    # Appliquer les transformations (bake dans la géométrie)
     bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
 
-    log(f"Échelle appliquée à {len(copies)} objets", "OK")
+    # Restaurer les paramètres
+    bpy.context.scene.cursor.location = original_cursor
+    bpy.context.scene.tool_settings.transform_pivot_point = original_pivot
+
+    log(f"Échelle {scale_factor} appliquée à {len(copies)} objets depuis l'origine", "OK")
 
 
 def hide_original_objects(objects):
@@ -441,16 +450,19 @@ def main():
         else:
             log(f"Cible atteinte : {vertices_after:,} vertices", "OK")
 
-        # ÉTAPE 6 : Cacher les originaux pour l'export
+        # ÉTAPE 6 : Appliquer l'échelle pour AR (intégrée dans la géométrie)
+        apply_scale_to_geometry(copies, CONFIG["export_scale"])
+
+        # ÉTAPE 7 : Cacher les originaux pour l'export
         hide_original_objects(exportable_objects)
 
-        # ÉTAPE 7 : Exporter en GLB
+        # ÉTAPE 8 : Exporter en GLB
         export_glb(copies)
 
-        # ÉTAPE 8 : Restaurer les originaux
+        # ÉTAPE 9 : Restaurer les originaux
         show_original_objects(exportable_objects)
 
-        # ÉTAPE 9 : Nettoyer
+        # ÉTAPE 10 : Nettoyer
         log("Nettoyage...", "STEP")
         cleanup_temp_collection()
 
