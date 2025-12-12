@@ -69,8 +69,9 @@ CONFIG = {
     "temp_collection_name": "__EXPORT_TEMP__",
 
     # Échelle pour AR (1.0 = taille originale)
-    # Le moteur fait ~8 unités, on le ramène à ~0.8m pour manipulation AR
-    "export_scale": 0.1,
+    # Le moteur fait ~8 unités, on le ramène à ~0.4m pour manipulation AR
+    # Cette échelle sera APPLIQUÉE à la géométrie avant export
+    "export_scale": 0.05,
 
     # Activer la compression Draco
     "use_draco": True,
@@ -259,6 +260,35 @@ def apply_decimation(copies, ratios):
         log(f"  {original_name} : {v_before} -> {v_after} vertices (-{reduction:.1f}%)", "OK")
 
 
+def apply_scale_to_geometry(copies, scale_factor):
+    """
+    Applique l'échelle directement à la géométrie des copies.
+    Cela intègre l'échelle dans les vertices, pas dans le transform.
+    """
+    log(f"Application de l'échelle {scale_factor} à la géométrie...", "STEP")
+
+    for original_name, obj_copy in copies.items():
+        # Appliquer l'échelle au transform de l'objet
+        obj_copy.scale = (scale_factor, scale_factor, scale_factor)
+
+        # Aussi mettre à jour la position (translation)
+        obj_copy.location = (
+            obj_copy.location.x * scale_factor,
+            obj_copy.location.y * scale_factor,
+            obj_copy.location.z * scale_factor
+        )
+
+    # Appliquer les transformations (bake into geometry)
+    bpy.ops.object.select_all(action='DESELECT')
+    for obj_copy in copies.values():
+        obj_copy.select_set(True)
+
+    bpy.context.view_layer.objects.active = list(copies.values())[0]
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+
+    log(f"Échelle appliquée à {len(copies)} objets", "OK")
+
+
 def hide_original_objects(objects):
     """Cache les objets originaux pour l'export."""
     for obj in objects:
@@ -411,7 +441,10 @@ def main():
         else:
             log(f"Cible atteinte : {vertices_after:,} vertices", "OK")
 
-        # ÉTAPE 6 : Cacher les originaux pour l'export
+        # ÉTAPE 6 : Appliquer l'échelle à la géométrie
+        apply_scale_to_geometry(copies, CONFIG["export_scale"])
+
+        # ÉTAPE 7 : Cacher les originaux pour l'export
         hide_original_objects(exportable_objects)
 
         # ÉTAPE 7 : Exporter en GLB
