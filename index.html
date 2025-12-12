@@ -230,31 +230,7 @@
        VISIONNEUSE 3D / AR
        ============================================= -->
   <div class="viewer-container">
-    <!--
-      MODEL-VIEWER : Paramètres
-      - scale 0.1 : modèle réduit à ~80cm (GLB fait 8 unités)
-      - ar-scale auto : redimensionnement par pinch autorisé
-      - ar-placement floor : placement au sol
-      - camera-orbit : vue initiale à 1.8m
-    -->
-    <model-viewer
-      id="moteur-hemi"
-      src="assets/hemi_engine.glb"
-      alt="Modèle 3D du moteur Hemi"
-      camera-controls
-      touch-action="pan-y"
-      scale="0.1 0.1 0.1"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      ar-scale="auto"
-      ar-placement="floor"
-      shadow-intensity="1"
-      exposure="0.8"
-      camera-orbit="35deg 70deg 1.8m"
-      min-camera-orbit="auto auto 0.8m"
-      max-camera-orbit="auto auto 3m"
-      field-of-view="30deg"
-    >
+    <model-viewer id="moteur-hemi" src="assets/hemi_engine.glb" alt="Moteur Hemi 3D" camera-controls touch-action="pan-y" scale="0.1 0.1 0.1" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" ar-placement="floor" shadow-intensity="1" exposure="0.8" camera-orbit="35deg 70deg 1.8m" min-camera-orbit="auto auto 0.8m" max-camera-orbit="auto auto 3m" field-of-view="30deg">
 
       <!-- =========================================
            HOTSPOT 1 : BLOC MOTEUR
