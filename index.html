@@ -97,17 +97,19 @@
     <model-viewer
       id="moteur-hemi"
       src="assets/hemi_engine.glb"
-      alt="Moteur Hemi V8"
+      alt="Moteur Hemi"
       camera-controls
       touch-action="pan-y"
-      camera-orbit="45deg 65deg 2.5m"
-      field-of-view="30deg"
-      shadow-intensity="1"
-      exposure="0.8"
       ar
       ar-modes="webxr scene-viewer quick-look"
-      ar-scale="fixed"
       ar-placement="floor"
+      ar-scale="auto"
+      scale="0.4 0.4 0.4"
+      camera-orbit="35deg 75deg 2.5m"
+      min-camera-orbit="auto auto 1.5m"
+      max-camera-orbit="auto auto 5m"
+      field-of-view="45deg"
+      bounds="tight"
     >
       <button slot="ar-button" class="ar-button">Voir en AR</button>
     </model-viewer>
@@ -115,7 +117,7 @@
 
   <footer>
     <strong>3D :</strong> faites glisser pour pivoter, pincez pour zoomer.
-    <strong>AR :</strong> appuyez sur le bouton, pointez une surface plane.
+    <strong>AR :</strong> pincez pour ajuster la taille du moteur.
   </footer>
 
 </body>
