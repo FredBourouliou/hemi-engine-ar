@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Module AR Moteur Hemi - Styles
+   ========================================================================== */
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+  padding: 1rem;
+  text-align: center;
+  background: #16213e;
+  border-bottom: 2px solid #0f3460;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ==========================================================================
+   Bandeau de consigne pedagogique
+   ========================================================================== */
+.consigne-bandeau {
+  background: #0f3460;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #1a4d7c;
+}
+
+.consigne-bandeau p {
+  font-size: 0.9rem;
+  color: #7ec8e3;
+  font-style: italic;
+}
+
+.consigne-bandeau strong {
+  color: #fff;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   Viewer 3D
+   ========================================================================== */
+.viewer-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 180px);
+  min-height: 400px;
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Bouton AR */
+.ar-button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 0.7rem 1.2rem;
+  background: #e94560;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+}
+
+.ar-button:hover {
+  background: #ff6b6b;
+}
+
+.ar-button[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Hotspots pedagogiques
+   ========================================================================== */
+.hotspot {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e94560;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.hotspot:hover {
+  transform: scale(1.2);
+}
+
+.hotspot-annotation {
+  position: absolute;
+  background: rgba(22, 33, 62, 0.95);
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  max-width: 180px;
+  pointer-events: none;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  border: 1px solid #0f3460;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hotspot-annotation::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid rgba(22, 33, 62, 0.95);
+}
+
+.hotspot-annotation strong {
+  display: block;
+  color: #e94560;
+  margin-bottom: 0.2rem;
+}
+
+/* Hotspot visible uniquement au survol */
+.hotspot .hotspot-annotation {
+  display: none;
+}
+
+.hotspot:hover .hotspot-annotation,
+.hotspot:focus .hotspot-annotation {
+  display: block;
+}
+
+/* ==========================================================================
+   Footer & Legende
+   ========================================================================== */
+footer {
+  padding: 0.8rem 1rem;
+  background: #16213e;
+  border-top: 2px solid #0f3460;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+}
+
+footer strong {
+  color: #e94560;
+}
+
+.legende {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.legende-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.legende-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .consigne-bandeau p {
+    font-size: 0.8rem;
+  }
+
+  .hotspot-annotation {
+    max-width: 150px;
+    font-size: 0.75rem;
+  }
+
+  .legende {
+    gap: 0.5rem;
+  }
+
+  .legende-item {
+    font-size: 0.7rem;
+  }
+}

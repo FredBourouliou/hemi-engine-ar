@@ -5,107 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moteur Hemi - Exploration AR</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #1a1a2e;
-      color: #eee;
-      min-height: 100vh;
-    }
-
-    header {
-      padding: 1rem;
-      text-align: center;
-      background: #16213e;
-      border-bottom: 2px solid #0f3460;
-    }
-
-    header h1 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    header p {
-      font-size: 0.85rem;
-      color: #aaa;
-    }
-
-    .viewer-container {
-      width: 100%;
-      height: calc(100vh - 140px);
-      min-height: 400px;
-    }
-
-    model-viewer {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    }
-
-    .ar-button {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      padding: 0.7rem 1.2rem;
-      background: #e94560;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
-    }
-
-    .ar-button:hover {
-      background: #ff6b6b;
-    }
-
-    .ar-button[hidden] {
-      display: none;
-    }
-
-    footer {
-      padding: 0.8rem 1rem;
-      background: #16213e;
-      border-top: 2px solid #0f3460;
-      font-size: 0.75rem;
-      color: #888;
-      text-align: center;
-    }
-
-    footer strong {
-      color: #e94560;
-    }
-
-    /* Légende */
-    .legende {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.5rem;
-    }
-
-    .legende-item {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .legende-color {
-      width: 12px;
-      height: 12px;
-      border-radius: 2px;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
 
@@ -114,11 +14,16 @@
     <p>Module pedagogique : visualisation 3D et realite augmentee</p>
   </header>
 
+  <!-- Bandeau de consigne pedagogique -->
+  <div class="consigne-bandeau">
+    <p><strong>Objectif :</strong> Identifiez les composants principaux du moteur et observez leur disposition spatiale.</p>
+  </div>
+
   <div class="viewer-container">
     <model-viewer
       id="moteur-hemi"
-      src="assets/hemi_engine.glb"
-      alt="Moteur Hemi"
+      src="assets/models/hemi_engine.glb"
+      alt="Moteur Hemi V8 - Vue d'inspection"
       camera-controls
       touch-action="pan-y"
       ar
@@ -131,6 +36,21 @@
       field-of-view="45deg"
       bounds="tight"
     >
+      <!-- Hotspot : Blower (suralimentation) -->
+      <button
+        class="hotspot"
+        slot="hotspot-blower"
+        data-position="3.158m 2.037m 0.638m"
+        data-normal="0.06 1.00 -0.01"
+        tabindex="0"
+        aria-label="Suralimentation Blower"
+      >
+        <div class="hotspot-annotation">
+          <strong>Blower</strong>
+          Compresseur volumetrique assurant la suralimentation du moteur.
+        </div>
+      </button>
+
       <button slot="ar-button" class="ar-button">Voir en AR</button>
     </model-viewer>
   </div>
@@ -154,9 +74,11 @@
         <span>Culasse</span>
       </div>
     </div>
-    <strong>3D :</strong> faites glisser pour pivoter, pincez pour zoomer.
-    <strong>AR :</strong> pincez pour ajuster la taille du moteur.
+    <strong>3D :</strong> faites glisser pour pivoter, pincez pour zoomer. Survolez les points rouges pour plus d'infos.
+    <br>
+    <strong>AR :</strong> visualisation a l'echelle reelle (interactions limitees au placement).
   </footer>
 
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

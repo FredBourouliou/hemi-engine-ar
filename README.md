@@ -10,11 +10,20 @@ Module pedagogique en realite augmentee pour l'exploration d'un moteur Hemi V8.
 
 - Visualisation 3D interactive du moteur
 - Mode AR sur mobile (iOS Safari, Android Chrome)
-- 4 points d'interet pedagogiques :
-  1. Bloc moteur
+- 3 hotspots pedagogiques interactifs :
+  1. Blower (suralimentation)
   2. Culasse hemispherique
-  3. Suralimentation (Blower)
-  4. Admission / Echappement
+  3. Collecteur d'echappement
+- Bandeau de consigne pedagogique
+- Legende des composants
+
+### Limites AR (assumees)
+
+L'AR via Quick Look (iOS) et Scene Viewer (Android) permet uniquement :
+- Placement a l'echelle reelle
+- Deplacement physique autour de l'objet
+
+Les hotspots et interactions sont disponibles en mode 2D uniquement.
 
 ## Stack technique
 
@@ -26,18 +35,21 @@ Module pedagogique en realite augmentee pour l'exploration d'un moteur Hemi V8.
 
 ```
 .
-├── index.html              # Page principale
+├── index.html                    # Page principale
 ├── assets/
-│   └── hemi_engine.glb     # Modele 3D optimise
-├── hotspots/
-│   └── hotspots-config.json
+│   ├── models/
+│   │   └── hemi_engine.glb       # Modele 3D optimise
+│   ├── styles/
+│   │   └── styles.css            # Styles du module
+│   └── js/
+│       └── app.js                # Logique JS (hotspots, accessibilite)
 ├── scripts/
-│   ├── analyze_blend.py    # Analyse du fichier Blender
-│   └── export_glb.py       # Export GLB non-destructif
+│   ├── analyze_blend.py          # Analyse du fichier Blender
+│   └── export_glb.py             # Export GLB non-destructif
 ├── docs/
 │   ├── integration-pedagogique.md
 │   └── export-glb-guide.md
-└── hemi_engine.blend       # Fichier source Blender
+└── hemi_engine.blend             # Fichier source Blender
 ```
 
 ## Utilisation locale
