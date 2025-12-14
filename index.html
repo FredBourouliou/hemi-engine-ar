@@ -3,26 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moteur Hemi - Exploration AR</title>
+  <title>Moteur Hemi - Module AR Pedagogique</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
 
   <header>
-    <h1>Moteur Hemi - Exploration AR</h1>
-    <p>Module pedagogique : visualisation 3D et realite augmentee</p>
+    <h1>Moteur Hemi V8 - Inspection 3D</h1>
+    <p>Module pedagogique : visualisation et AR</p>
   </header>
+
+  <!-- Navigation par phases pedagogiques -->
+  <nav class="phases-nav">
+    <button class="phase-btn active" data-phase="0">
+      <span class="phase-num">0</span>Contexte
+    </button>
+    <button class="phase-btn" data-phase="1">
+      <span class="phase-num">1</span>Vue globale
+    </button>
+    <button class="phase-btn" data-phase="2">
+      <span class="phase-num">2</span>Inspection
+    </button>
+    <button class="phase-btn" data-phase="3">
+      <span class="phase-num">3</span>Structure
+    </button>
+    <button class="phase-btn" data-phase="4">
+      <span class="phase-num">4</span>Synthese
+    </button>
+  </nav>
 
   <!-- Bandeau de consigne pedagogique -->
   <div class="consigne-bandeau">
-    <p><strong>Objectif :</strong> Identifiez les composants principaux du moteur et observez leur disposition spatiale.</p>
+    <p><strong>Contexte :</strong> Ce module presente un moteur Hemi V8 suralimente. Explorez librement le modele 3D.</p>
+  </div>
+
+  <!-- Controles d'etat -->
+  <div class="state-controls">
+    <button class="state-btn active" data-state="state_a">
+      <span class="state-label">A - Complet</span>
+      <span class="state-desc">Vue d'ensemble</span>
+    </button>
+    <button class="state-btn" data-state="state_b">
+      <span class="state-label">B - Sans blower</span>
+      <span class="state-desc">Bloc visible</span>
+    </button>
+    <button class="state-btn" data-state="state_c">
+      <span class="state-label">C - Bloc seul</span>
+      <span class="state-desc">Structure de base</span>
+    </button>
   </div>
 
   <div class="viewer-container">
     <model-viewer
       id="moteur-hemi"
-      src="assets/models/hemi_engine.glb"
+      src="assets/models/hemi_state_a_full.glb"
       alt="Moteur Hemi V8 - Vue d'inspection"
       camera-controls
       touch-action="pan-y"
@@ -36,7 +71,7 @@
       field-of-view="45deg"
       bounds="tight"
     >
-      <!-- Hotspot : Blower (suralimentation) -->
+      <!-- Hotspot : Blower (suralimentation) - visible uniquement sur etat A -->
       <button
         class="hotspot"
         slot="hotspot-blower"
@@ -74,9 +109,8 @@
         <span>Culasse</span>
       </div>
     </div>
-    <strong>3D :</strong> faites glisser pour pivoter, pincez pour zoomer. Survolez les points rouges pour plus d'infos.
-    <br>
-    <strong>AR :</strong> visualisation a l'echelle reelle (interactions limitees au placement).
+    <strong>3D :</strong> Faites glisser pour pivoter, pincez pour zoomer.
+    <strong>AR :</strong> Visualisation a l'echelle reelle (interactions limitees).
   </footer>
 
   <script src="assets/js/app.js"></script>
