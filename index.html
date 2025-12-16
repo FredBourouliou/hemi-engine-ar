@@ -54,6 +54,17 @@
     </button>
   </div>
 
+  <!-- Vues expertes predefinies -->
+  <div class="expert-views">
+    <span class="expert-views-label">Vues :</span>
+    <button class="view-btn" data-view="front" title="Vue de face">Avant</button>
+    <button class="view-btn" data-view="back" title="Vue arriere">Arriere</button>
+    <button class="view-btn" data-view="left" title="Vue laterale gauche">Gauche</button>
+    <button class="view-btn" data-view="right" title="Vue laterale droite">Droite</button>
+    <button class="view-btn" data-view="top" title="Vue de dessus">Dessus</button>
+    <button class="view-btn" data-view="reset" title="Revenir a la vue initiale">Reset</button>
+  </div>
+
   <div class="viewer-container">
     <model-viewer
       id="moteur-hemi"
@@ -71,9 +82,13 @@
       field-of-view="45deg"
       bounds="tight"
     >
-      <!-- Hotspot : Blower (suralimentation) - visible uniquement sur etat A -->
+      <!-- ============================================================
+           HOTSPOTS ÉTAT A (Complet) - 3 hotspots
+           ============================================================ -->
+
+      <!-- Hotspot A1 : Blower (suralimentation) -->
       <button
-        class="hotspot"
+        class="hotspot hotspot-state-a"
         slot="hotspot-blower"
         data-position="3.158m 2.037m 0.638m"
         data-normal="0.06 1.00 -0.01"
@@ -83,6 +98,76 @@
         <div class="hotspot-annotation">
           <strong>Blower</strong>
           Compresseur volumetrique assurant la suralimentation du moteur.
+        </div>
+      </button>
+
+      <!-- Hotspot A2 : Bougies d'allumage (fils rouges) -->
+      <button
+        class="hotspot hotspot-state-a"
+        slot="hotspot-bougies"
+        data-position="3.252m 1.903m 0.731m"
+        data-normal="0.0 1.0 0.0"
+        tabindex="0"
+        aria-label="Bougies d'allumage"
+      >
+        <div class="hotspot-annotation">
+          <strong>Bougies</strong>
+          Fils d'allumage haute tension. Transmettent l'etincelle aux bougies.
+        </div>
+      </button>
+
+      <!-- Hotspot A3 : Distributeur (fils bleus) -->
+      <button
+        class="hotspot hotspot-state-a"
+        slot="hotspot-distributeur"
+        data-position="3.259m 2.023m 0.649m"
+        data-normal="0.0 1.0 0.0"
+        tabindex="0"
+        aria-label="Distributeur"
+      >
+        <div class="hotspot-annotation">
+          <strong>Distributeur</strong>
+          Distribue le courant haute tension aux bougies dans l'ordre d'allumage.
+        </div>
+      </button>
+
+      <!-- ============================================================
+           HOTSPOTS ÉTAT B (Sans blower) - 1 hotspot
+           ============================================================ -->
+
+      <!-- Hotspot B1 : Surface bloc visible (centre, la ou etait le blower) -->
+      <button
+        class="hotspot hotspot-state-b"
+        slot="hotspot-surface-bloc"
+        data-position="3.2m 1.7m 0.6m"
+        data-normal="0.0 1.0 0.0"
+        tabindex="0"
+        aria-label="Surface du bloc moteur"
+        style="display: none;"
+      >
+        <div class="hotspot-annotation">
+          <strong>Surface du bloc</strong>
+          Sans le blower, la partie superieure du bloc est accessible pour inspection.
+        </div>
+      </button>
+
+      <!-- ============================================================
+           HOTSPOTS ÉTAT C (Bloc seul) - 1 hotspot
+           ============================================================ -->
+
+      <!-- Hotspot C1 : Disposition en V (centre du bloc) -->
+      <button
+        class="hotspot hotspot-state-c"
+        slot="hotspot-disposition-v"
+        data-position="3.2m 1.3m 0.5m"
+        data-normal="0.0 1.0 0.0"
+        tabindex="0"
+        aria-label="Disposition en V"
+        style="display: none;"
+      >
+        <div class="hotspot-annotation">
+          <strong>Disposition en V</strong>
+          Les 8 cylindres sont disposes en V a 90 degres. Configuration classique des V8 americains.
         </div>
       </button>
 
