@@ -1,0 +1,2 @@
+# Blender export scripts are tooling, not the project language
+scripts/*.py linguist-vendored
