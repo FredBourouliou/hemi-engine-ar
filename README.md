@@ -1,119 +1,39 @@
-# Moteur Hemi - Module AR Pedagogique
+# Hemi V8 — 3D & AR inspection module
 
-Module pedagogique d'inspection 3D et AR pour l'exploration d'un moteur Hemi V8.
+**A browser-based training module to explore a supercharged Hemi V8 engine in 3D and in augmented reality**, before touching the real one in the workshop. No install, no app: open the link on a phone and place the engine on your desk.
 
-## Demo
+**[▶ Live demo](https://fredbourouliou.github.io/hemi-engine-ar/)** · UI in French
 
-[https://fredbourouliou.github.io](https://fredbourouliou.github.io)
+<p align="center">
+  <img src="screenshots/inspection-3d.png" alt="3D inspection view of the Hemi V8 engine with phases, states and hotspots" width="90%">
+</p>
 
-## Fonctionnalites
+## What it does
 
-### Structure pedagogique en 5 phases
+- **5 guided phases** — context, overview, inspection, structure, synthesis — each with its own instruction banner.
+- **3 engine states**, one GLB each: full engine, without the blower, bare block. Switching states shows what each disassembly step reveals.
+- **Hotspots, camera presets** (front, back, left, right, top) and a colour legend of the sub-assemblies.
+- **AR on mobile** via iOS Quick Look and Android Scene Viewer: real-scale placement, walk around the engine.
 
-| Phase | Nom | Description |
-|-------|-----|-------------|
-| 0 | Contexte | Introduction et exploration libre |
-| 1 | Vue globale | Identification des sous-ensembles |
-| 2 | Inspection | Observation sans blower |
-| 3 | Structure | Analyse du bloc moteur seul |
-| 4 | Synthese | Vision complete avec reperage |
+AR mode is deliberately limited to placement: hotspots and state changes stay in the 3D view. The [A-Frame variant](https://github.com/FredBourouliou/a-frame-hemi-engine) keeps them interactive in AR, at the cost of a printed marker.
 
-### 3 etats pedagogiques (GLB distincts)
+## How it's built
 
-- **Etat A** : Moteur complet (vue d'ensemble)
-- **Etat B** : Sans blower (bloc visible)
-- **Etat C** : Bloc seul (structure de base)
-
-### Autres fonctionnalites
-
-- Visualisation 3D interactive
-- Mode AR sur mobile (iOS Safari, Android Chrome)
-- Hotspot pedagogique (Blower)
-- Bandeau de consigne dynamique
-- Legende des composants
-
-### Limites AR (assumees)
-
-L'AR via Quick Look (iOS) et Scene Viewer (Android) permet uniquement :
-- Placement a l'echelle reelle
-- Deplacement physique autour de l'objet
-
-Les hotspots, changements d'etat et interactions sont disponibles en mode 2D uniquement.
-
-## Stack technique
-
-- [Model-Viewer](https://modelviewer.dev/) - Composant web Google pour 3D/AR
-- HTML/CSS/JS vanilla (aucun framework)
-- Modeles 3D : GLB (exportes depuis Blender)
-
-## Structure du projet
-
-```
-.
-├── index.html                         # Page principale
-├── assets/
-│   ├── models/
-│   │   ├── hemi_state_a_full.glb      # Etat A - Complet
-│   │   ├── hemi_state_b_no_blower.glb # Etat B - Sans blower
-│   │   └── hemi_state_c_bloc.glb      # Etat C - Bloc seul
-│   ├── styles/
-│   │   └── styles.css
-│   └── js/
-│       └── app.js                     # Logique etats/phases
-├── scripts/
-│   ├── analyze_blend.py               # Analyse fichier Blender
-│   ├── export_glb.py                  # Export GLB simple
-│   └── export_states.py               # Export multi-etats
-├── docs/
-│   ├── integration-pedagogique.md
-│   └── export-glb-guide.md
-└── hemi_engine.blend                  # Fichier source Blender
-```
-
-## Utilisation locale
+- [`<model-viewer>`](https://modelviewer.dev/) + vanilla HTML/CSS/JS — no framework, no build step.
+- The Blender file is the single source of truth: [`scripts/export_states.py`](scripts/export_states.py) exports the three states as separate GLB files in one headless run.
 
 ```bash
-# Serveur local
-cd "/Users/fredericbourouliou/Essai AR"
-python3 -m http.server 8000
-
-# Ouvrir http://localhost:8000
+blender hemi_engine.blend --background --python scripts/export_states.py
+python3 -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Export des modeles 3D
+## Related
 
-### Export multi-etats (recommande)
+- [exploration-3d-moteur](https://github.com/FredBourouliou/exploration-3d-moteur) — the same engine as a step-by-step procedure (exploded view, isolation) · [demo](https://fredbourouliou.github.io/exploration-3d-moteur/)
+- [a-frame-hemi-engine](https://github.com/FredBourouliou/a-frame-hemi-engine) — A-Frame + AR.js version with interactive hotspots in AR · [demo](https://fredbourouliou.github.io/a-frame-hemi-engine/)
 
-```bash
-/Applications/Blender.app/Contents/MacOS/Blender hemi_engine.blend --background --python scripts/export_states.py
-```
+Teaching notes (French): [docs/integration-pedagogique.md](docs/integration-pedagogique.md).
 
-Genere 3 GLB correspondant aux etats pedagogiques A, B et C.
+## License
 
-### Configuration des etats
-
-Modifier `scripts/export_states.py` pour ajuster :
-- Les objets exclus par etat
-- Les noms de fichiers
-- Les descriptions
-
-## Compatibilite
-
-| Plateforme | Navigateur | Support |
-|------------|------------|---------|
-| iOS | Safari | Quick Look (AR) |
-| Android | Chrome | Scene Viewer (AR) |
-| Desktop | Tous | Vue 3D uniquement |
-
-## Objectifs pedagogiques
-
-Ce module permet de :
-- Identifier les composants principaux d'un moteur V8
-- Comprendre la specificite de l'architecture Hemi
-- Visualiser le systeme de suralimentation (blower)
-- Observer la structure interne du bloc moteur
-- Suivre une progression pedagogique guidee
-
-## Licence
-
-MIT
+Code (HTML, CSS, JS, Python export scripts) under the [MIT License](LICENSE).
